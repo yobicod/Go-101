@@ -103,11 +103,15 @@ func main() {
 	conStringNumeric := strconv.Itoa(numeric)
 	fmt.Printf("Value is %s, Type is %T\n", conStringNumeric, conStringNumeric)
 
-	// Array declaration
+	// Array declaration with fix size
 	var salary = [5]int{1, 2, 3, 4, 5}
 	fmt.Println(salary)
 
 	// assign index 1 = 4, 6 = 10
 	arr := [10]int{1: 4, 6: 10}
 	fmt.Println(arr)
+
+	// Array declaration with free-size
+	dynamicArray := [...]int{1, 2, 3}
+	fmt.Println(dynamicArray)
 }
