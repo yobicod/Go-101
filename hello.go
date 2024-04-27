@@ -13,8 +13,8 @@ func main() {
 
 	fmt.Println(true && false)
 
-	fmt.Println(`Test new
-	krub`)
+	fmt.Println(`new
+	line`)
 
 	const htmlCode = "<p>Hello Go-101<p/>"
 	en := html.EscapeString(htmlCode)
