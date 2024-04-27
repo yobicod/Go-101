@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"html"
+	"log"
+	"net/url"
 )
 
 func main() {
@@ -22,4 +24,35 @@ func main() {
 	fmt.Println(en)
 	fmt.Println(de)
 
+	encodePath := url.PathEscape("get/me")
+	decodePath, err := url.PathUnescape(encodePath)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(encodePath)
+	fmt.Println(decodePath)
+
+	var str string
+	var num, count int
+
+	str = "Go language"
+	num = 1
+	count = 2
+	fmt.Println(str, num, count)
+
+	born := 2002
+	isMale, edu := true, "Banchelor"
+	fmt.Println(born, isMale, edu)
+
+	const lightSpeed = 299792
+	const Pi = 3.1451928
+	distance := 5000000
+	radius := 5.0
+	fmt.Println("time light speed : ", distance/lightSpeed, " seconds")
+	fmt.Println("Aread of cycle : ", Pi*radius*radius)
+
+	var value int16 = 250
+	fmt.Printf("type of value is %T\n", value)
+
+	fmt.Printf("Value of str is %v and type is %T\n", str, str)
 }
