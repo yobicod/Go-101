@@ -10,11 +10,13 @@ import (
 
 func main() {
 
+	// loop
 	for i := 1; i < 10; i++ {
 		if i > 5 {
 			fmt.Println("Stop loop process")
 			break
 		}
+		// run this if others succesfully execute
 		defer fmt.Printf("Round %d valus is %d\n", i, i)
 	}
 
@@ -28,12 +30,14 @@ func main() {
 	fmt.Println(`new
 	line`)
 
+	// Encode escape char(html)
 	const htmlCode = "<p>Hello Go-101<p/>"
 	en := html.EscapeString(htmlCode)
 	de := html.UnescapeString(htmlCode)
 	fmt.Println(en)
 	fmt.Println(de)
 
+	// Encode escape char(URL)
 	encodePath := url.PathEscape("get/me")
 	decodePath, err := url.PathUnescape(encodePath)
 	if err != nil {
@@ -61,11 +65,13 @@ func main() {
 	fmt.Println("time light speed : ", distance/lightSpeed, " seconds")
 	fmt.Println("Aread of cycle : ", Pi*radius*radius)
 
+	// Formatted string
 	var value int16 = 250
 	fmt.Printf("type of value is %T\n", value)
 
 	fmt.Printf("Value of str is %v and type is %T\n", str, str)
 
+	// Get input
 	// var firstName string
 	// var myAge int
 	// fmt.Println("Enter your name and age : ")
@@ -77,11 +83,13 @@ func main() {
 	// fmt.Printf("Age is %d", myAge)
 	// fmt.Println(n)
 
+	// Convert int to float
 	var num1 float32 = 1.5
 	var num2 int = 4
 	sum := num1 + float32(num2)
 	fmt.Println(sum)
 
+	// Convert numeric string to int
 	var numericString string = "18"
 	convNumericString, err := strconv.Atoi(numericString)
 	if err == nil {
@@ -91,7 +99,15 @@ func main() {
 	}
 
 	var numeric int = 18
+	// Convert int to string
 	conStringNumeric := strconv.Itoa(numeric)
 	fmt.Printf("Value is %s, Type is %T\n", conStringNumeric, conStringNumeric)
 
+	// Array declaration
+	var salary = [5]int{1, 2, 3, 4, 5}
+	fmt.Println(salary)
+
+	// assign index 1 = 4, 6 = 10
+	arr := [10]int{1: 4, 6: 10}
+	fmt.Println(arr)
 }
