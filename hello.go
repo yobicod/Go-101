@@ -99,6 +99,7 @@ func main() {
 	}
 
 	var numeric int = 18
+
 	// Convert int to string
 	conStringNumeric := strconv.Itoa(numeric)
 	fmt.Printf("Value is %s, Type is %T\n", conStringNumeric, conStringNumeric)
@@ -114,4 +115,30 @@ func main() {
 	// Array declaration with free-size
 	dynamicArray := [...]int{1, 2, 3}
 	fmt.Println(dynamicArray)
+
+	// loop through array
+	acc := 0
+	for i := 0; i < len(dynamicArray); i++ {
+		acc += dynamicArray[i]
+	}
+	fmt.Println("Acc is " + strconv.Itoa(acc))
+
+	// loop range
+	for index, value := range dynamicArray {
+		fmt.Println(index)
+		acc += value
+	}
+	fmt.Println(acc)
+
+	sumFunctionResult := calcSum(arr)
+	fmt.Println("Result from called sum function is " + strconv.Itoa(sumFunctionResult))
+
+}
+
+func calcSum(arr [10]int) int {
+	sum := 0
+	for _, value := range arr {
+		sum += value
+	}
+	return sum
 }
