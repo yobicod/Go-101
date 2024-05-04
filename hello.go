@@ -133,6 +133,28 @@ func main() {
 	sumFunctionResult := calcSum(arr)
 	fmt.Println("Result from called sum function is " + strconv.Itoa(sumFunctionResult))
 
+	// Slice
+	numbers := []int{1, 2, 3, 4, 5, 6}
+	numbers = append(numbers, 7, 8, 9, 10)
+	fmt.Println(numbers)
+	slices := []int{1, 2, 3}
+	fmt.Println(slices)
+
+	// Map
+	z := map[string]string{"name": "Visal", "age": "22", "gender": "male"}
+	fmt.Println(z["name"])
+	// delete key
+	delete(z, "gender")
+	fmt.Println(z)
+	// check how many key
+	fmt.Println(len(z))
+	//check key exist in map (val if exist return value else 0, status return boolean)
+	val, status := z["gender"]
+	if status {
+		fmt.Println(val)
+	} else {
+		fmt.Println("Not found")
+	}
 }
 
 func calcSum(arr [10]int) int {
