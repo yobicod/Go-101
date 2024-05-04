@@ -1,6 +1,7 @@
 package main
 
 import (
+	"GO-101/math"
 	"fmt"
 	"html"
 	"log"
@@ -165,6 +166,9 @@ func main() {
 	fmt.Println("Before call fn", a)
 	changeByReference(&a)
 	fmt.Println("after call fn", a)
+
+	answer := math.Add(1, 2)
+	fmt.Printf("Answer is %d\n", answer)
 }
 
 func calcSum(arr [10]int) int {
