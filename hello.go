@@ -200,6 +200,20 @@ func main() {
 	fmt.Println(pd3)
 
 	getProductDetail(pd1)
+
+	// Pointer
+	var x int = 5
+	var p *int
+
+	fmt.Println("Value of x = ", x, "Address of x = ", &x)
+	fmt.Println("Value of p = ", p, "Address of p = ", &p)
+
+	p = &x
+	*p = 10
+
+	fmt.Println("Value of x = ", x, "Address of x = ", &x)
+	fmt.Println("Value of p = ", p, "Address of p = ", &p)
+
 }
 
 func calcSum(arr [10]int) int {
