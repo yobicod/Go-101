@@ -9,6 +9,12 @@ import (
 	"strconv"
 )
 
+type Product struct {
+	id    int
+	name  string
+	price int
+}
+
 func main() {
 
 	// loop
@@ -169,6 +175,31 @@ func main() {
 
 	answer := math.Add(1, 2)
 	fmt.Printf("Answer is %d\n", answer)
+
+	//Struct
+
+	var pd1 Product
+	var pd2 = new(Product)
+	pd3 := struct {
+		id    int
+		name  string
+		price int
+	}{
+		id:    1256,
+		name:  "Samsung s24",
+		price: 59000,
+	}
+	fmt.Println(pd1)
+	fmt.Println(pd2)
+	pd1.id = 1
+	pd1.name = "Iphone15"
+	pd1.price = 29900
+	pd2.id = 2
+	pd2.name = "Iphone14"
+	pd2.price = 25900
+	fmt.Println(pd3)
+
+	getProductDetail(pd1)
 }
 
 func calcSum(arr [10]int) int {
@@ -190,4 +221,10 @@ func changeByReference(number *int) {
 	fmt.Println("Before change fn", *number)
 	*number = 500
 	fmt.Println("after change fn", *number)
+}
+
+func getProductDetail(product Product) {
+	fmt.Printf("Id is : %v\n", product.id)
+	fmt.Printf("Name is : %v\n", product.name)
+	fmt.Printf("Price is : %v\n", product.price)
 }
