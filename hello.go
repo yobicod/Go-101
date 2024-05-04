@@ -155,6 +155,16 @@ func main() {
 	} else {
 		fmt.Println("Not found")
 	}
+
+	// pass by value
+	a := 200
+	fmt.Println("Before call fn", a)
+	changeByValue(a)
+	fmt.Println("after call fn", a)
+	fmt.Println("*************")
+	fmt.Println("Before call fn", a)
+	changeByReference(&a)
+	fmt.Println("after call fn", a)
 }
 
 func calcSum(arr [10]int) int {
@@ -163,4 +173,17 @@ func calcSum(arr [10]int) int {
 		sum += value
 	}
 	return sum
+}
+
+func changeByValue(number int) {
+	fmt.Println("Before change fn", number)
+	number = 500
+	fmt.Println("after change fn", number)
+}
+
+// set pointer to address of args
+func changeByReference(number *int) {
+	fmt.Println("Before change fn", *number)
+	*number = 500
+	fmt.Println("after change fn", *number)
 }
